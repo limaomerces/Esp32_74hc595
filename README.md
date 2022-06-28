@@ -6,8 +6,6 @@
   
   Autor: Tiago Mercês Silva
   
-  Email: tiago.merces@hotmail.com
-  
   Histórico de Atualizações:
   
           ??/03/2020 - 1.0   - Controle do 595
