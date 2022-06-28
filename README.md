@@ -1,8 +1,11 @@
 #Esp32_74HC595_PWM
 
  Nome do Projeto: Esp32_74hc595_PWM
+ 
   Objetivo: Gerar sinal PWM, através do CI74hc595 com auxílio do controlador ESP32
+  
   Autor: Tiago Mercês Silva
+  
   Email: tiago.merces@hotmail.com
   
   Histórico de Atualizações:
