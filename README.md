@@ -1,5 +1,4 @@
-#Esp32_74HC595_PWM
-
+====================================================================================
  Nome do Projeto: Esp32_74hc595_PWM
  
   Objetivo: Gerar sinal PWM, através do CI74hc595 com auxílio do controlador ESP32
@@ -19,3 +18,7 @@
           ??/04/2022 - 1.4.3 - Otimização de código
           20/06/2022 - 2.0   - Reestruturação do código (grandes melhorias de performance)
           28/06/2022 - 2.1   - Adição da interrupção.
+          
+===============================================================================================
+
+Instruções:
