@@ -8,7 +8,7 @@
  
    Histórico de Atualizações:
   
-          ?/03/2020 - 1.0   - Controle do 595
+          ?/03/2020  - 1.0   - Controle do 595
           ??/08/2020 - 1.1   - Adição do PWM
           ??/09/2020 - 1.2   - Adição do pisca
           ??/02/2021 - 1.2.1 - Otimização de código
