@@ -1,0 +1,3 @@
+Tms74hc595_setup			KEYWORD2
+Tms74HC595_Main				KEYWORD2
+
