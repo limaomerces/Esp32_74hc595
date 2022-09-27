@@ -16,26 +16,37 @@
 // =====================================
 // TMS_74HC595_USERSETUP.h
 // =====================================
-// Definições do CI:
+
+// ======= Informações do CI =======
 - Em "DATA" defina o pino.
 - Em "CLOCK" defina o pino.
 - Em "LATCH" defina o pino.
 - Em "Quant_74hc595", defina o número de CI em cascata.
 
-// Características do PWM
+// ======= RANGE DO PWM ========
 - Em "Tms595Pwm_Range" Defina o Range (10 á 250) do pwm (Padrão é 100).
 
+
+// ======= Veículo de execução da função =========
+- Atualmente existem 3 formas, interrupção, freertos core0 e pelo "void loop()".
+- Recomendo usar apenas 1, para isso, deixe 2 linhas comentadas e 1 sem comentar.
+
+// ======= PWM de precisão ========
+- Recomendado apenas com o uso da interrupção.
+- Em principio, o calculo irá levar em consideração o Range e o tempo de interrupção.
+- se range = 100, interrupção = 1000, então, ele deveria ter 10hz de frequencia para cada ciclo completo.
+- Caso não queira este método, deixe a linha " #define Def_TMS595_PwmPrecisao " comentada, e descomente "#define Def_TMS595_PwmPadrao"
+
+// ====== Definição do tempo de interrupção =======
+- Define o tempo de interrupção
+
+// ====== Definição do tempo de delay com FreeRTOS ========
+- Define o tempo do ciclo (1 = 1ms)
+
 // Correção de efeitos 
-- EM "Def_TMS595_CORRECAO" Defina 1 para ATIVADO e 0 para DESATIVADO
 obs- Se, num efeito, você sente que um led está apagando primeiro que o outro, ative este recurso.
 obs2- Teste, ativado e desativado, para saber o melhor para sua aplicação.
 
-// Método de execução:
-- Interrupção: defina "TmsINTERRUPT" para "1"
-	interruptTimer: Espera para interrupção (valor em microsegundos. 1000 = 1ms)
-- FreeRTOS: Defina "TmsFreeRTOS_C0" para "1"
-	TmsFreeRTOS_Delay: Espera para o freeRTOS (Valor em millissegudos. 1 = 1ms)
-- Tradicional: Defina os dois métodos para "0" e adicione o "Tms74HC595_Main()" na função "void loop(){}"
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
