@@ -1,0 +1,78 @@
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ===========================================
+//               INSTALAÇÃO
+// ===========================================
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// ===========================================
+// PRIMEIROS PASSOS
+// ===========================================
+1- Adicione da pasta de referência de bibliotecas
+2- defina as configurações em TMS_74HC595_USERSETUP.h
+3- no topo do seu código, adicione: #include <TMS_74HC595.h>
+4- adicione o "Tms74hc595_setup()" ao "void setup(){}"
+
+
+// =====================================
+// TMS_74HC595_USERSETUP.h
+// =====================================
+// Definições do CI:
+- Em "DATA" defina o pino.
+- Em "CLOCK" defina o pino.
+- Em "LATCH" defina o pino.
+- Em "Quant_74hc595", defina o número de CI em cascata.
+
+// Características do PWM
+- Em "Tms595Pwm_Range" Defina o Range (10 á 250) do pwm (Padrão é 100).
+
+// Correção de efeitos 
+- EM "Def_TMS595_CORRECAO" Defina 1 para ATIVADO e 0 para DESATIVADO
+obs- Se, num efeito, você sente que um led está apagando primeiro que o outro, ative este recurso.
+obs2- Teste, ativado e desativado, para saber o melhor para sua aplicação.
+
+// Método de execução:
+- Interrupção: defina "TmsINTERRUPT" para "1"
+	interruptTimer: Espera para interrupção (valor em microsegundos. 1000 = 1ms)
+- FreeRTOS: Defina "TmsFreeRTOS_C0" para "1"
+	TmsFreeRTOS_Delay: Espera para o freeRTOS (Valor em millissegudos. 1 = 1ms)
+- Tradicional: Defina os dois métodos para "0" e adicione o "Tms74HC595_Main()" na função "void loop(){}"
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ===========================================
+//                FUNÇÕES
+// ===========================================
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// =====================================
+//   PWM BASE
+// =====================================
+void Tms74hc595_Limite_Brilho_Geral(byte TopLimiteGeral)            // !!! Define o percentual máximo do duty de TODOS os PINOS (Ex: (Duty ou TopDuty) = 80, Limite = 90. 80*0,9 = 72%)
+void Tms74hc595_Limite_Brilho_Pino (byte pino, byte TopLimitePino)  // !!! Define o percentual máximo do duty do PINO "X" (Ex: (Duty ou TopDuty) = 80, Limite = 90. 80*0,9 = 72%)
+void Tms74hc595_Duty_Geral(byte duty) 	             	    	    // Define o duty para todos os pinos
+void Tms74hc595_Duty_Pin(byte pino, byte duty)     	  	    // Define o duty para o pino "X"
+
+// ===================================
+// PISCA-PISCA
+// ===================================
+void Tms74hc595_Pisca_Geral(bool OnOff)           	  // Define o Pisca para todos os pinos
+void Tms74hc595_Pisca_Tempo(int tempo)	   	          // Define o tempo do pisca para todos os pinos
+void Tms74hc595_Pisca_Pino(byte pino, bool OnOff)	  // Define o Pisca para o pino "X"
+
+// =========================================================   
+// EFEITOS
+// =========================================================
+void Tms74hc595_Efeito_Geral(byte efeito, float topduty)           // Define Efeito para todos os pinos
+void Tms74hc595_Efeito_Tempo(byte efeito, int valor)                // Tempo do efeito
+void Tms74hc595_Efeito_Pino(byte pino, byte efeito, float topduty) // Pino, Efeito e TopDuty
+
+// =================================
+// REFERÊNCIA DE VALORES
+// =================================
+//  TopLimiteGeral = 0 á 100
+//  Duty = 0 á 100
+//  Pino = Depende do número de CI
+//  OnOff = 0 (off) ou 1 (on)
+//  Tempo = em milissegundos
+//  Efeito = 1 á 3 (1 = Crescente, 2 = vai e volta, 3 = decrescente)
+//  TopDuty = 0 á 100
