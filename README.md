@@ -32,8 +32,8 @@
           02/07/2022 - 2.4.3 - Adição de Correção opcional (duty 0% mesmo efeito)
           03/07/2022 - 2.5   - Adição do limite de brilho individual
           09/07/2022 - 2.5.1 - Melhoria das definições do usuário
-       	 11/09/2022 - 2.6   - Adicionado recurso de PWM com maior precisão
- 			 19/09/2022 - 2.6.1 - Melhora nas configurações para o usuário
+       	11/09/2022 - 2.6   - Adicionado recurso de PWM com maior precisão
+ 		19/09/2022 - 2.6.1 - Melhora nas configurações para o usuário
           
 ===========================================================================
 
@@ -46,8 +46,10 @@ Sendo assim, resolvi produzir meu próprio código para utilizar em um projeto p
 
 
 ==========================================================
+
 :Instruções:
 
+Veja o arquivo "instrucoes.txt"
 
 
 
