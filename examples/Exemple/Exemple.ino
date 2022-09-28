@@ -12,7 +12,6 @@ void setup() {
   Tms74hc595_Efeito_Pino(5, 1, 100);
   Tms74hc595_Efeito_Pino(6, 2, 100);
   Tms74hc595_Efeito_Pino(7, 3, 100);
-  teste1 = millis();
   Serial.begin(115200);
 }
 
