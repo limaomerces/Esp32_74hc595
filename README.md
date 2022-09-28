@@ -1,4 +1,4 @@
-===========================================================================
+
 
 # TMS Esp32 74hc595 PWM
  
@@ -6,7 +6,7 @@
  
    Autor: Tiago Mercês Silva
  
-  ## Histórico de Atualizações:
+  ## Histórico de Atualizações
   
           ??/03/2020 - 1.0   - Controle do 595
           ??/08/2020 - 1.1   - Adição do PWM
@@ -35,9 +35,8 @@
        	11/09/2022 - 2.6   - Adicionado recurso de PWM com maior precisão
  		19/09/2022 - 2.6.1 - Melhora nas configurações para o usuário
           
-===========================================================================
 
-## :Sobre:
+## Sobre
 
 Na tentativa de economizar pinos do ESP32, resolvi utilizar o integrado 74HC595, entretanto, era necessário que este trabalhasse com PWM para fornecer controle de brilho.
 
@@ -45,9 +44,8 @@ Sendo assim, resolvi produzir meu próprio código para utilizar em um projeto p
 
 
 
-==========================================================
 
-## :Instruções:
+## Instruções
 
 Veja o arquivo "instrucoes.txt"
 
