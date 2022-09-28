@@ -1,6 +1,6 @@
 ===========================================================================
 
-   Nome do Projeto: Esp32_74hc595_PWM
+# TMS Esp32 74hc595 PWM
  
    Objetivo: Gerar sinal PWM, através do CI74hc595 com auxílio do controlador ESP32
  
